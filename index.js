@@ -14,7 +14,7 @@ const fileName = path.join(path.dirname(fileURLToPath(import.meta.url)), process
 const rl = readline.createInterface({ input, output: await open(fileName, 'a+') });
 
 console.log(`Орёл(${minNumber}) или решка(${maxNumber}). Попробуй угадать:`);
-rl.on('line', async (input) => {
+rl.on('line', (input) => {
     input = parseInt(input, 10);
     if (isNaN(input) || (input < 1 || input > 2)) {
         console.log('Пожалуйста, введите корректное число: 1 или 2');
